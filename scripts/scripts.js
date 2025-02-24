@@ -144,7 +144,7 @@ async function loadEager(doc) {
   // await window.hlx.plugins.run('loadEager');
   const main = doc.querySelector('main');
   const experimentationOptions = {
-    prodHost: 'www.securbankdemo.com',
+    prodHost: 'main--securbank--oliviagillies.aem.live',
     isProd: () => !(window.location.hostname.endsWith('aem.page')
     || window.location.hostname === ('localhost')),
     rumSamplingRate: 1,
@@ -211,7 +211,7 @@ async function loadLazy(doc) {
     // eslint-disable-next-line import/no-relative-packages
     const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
     await runLazy(document, {
-      prodHost: 'www.securbankdemo.com',
+      prodHost: 'main--securbank--oliviagillies.aem.live',
       isProd: () => window.location.hostname.endsWith('aem.page')
       || window.location.hostname === ('localhost'),
       audiences: getAudiences(),
