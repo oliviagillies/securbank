@@ -10,15 +10,9 @@ export default async function decorate(block) {
   block.textContent = '';
 
   // load footer fragment
-  console.log(`footerMeta = ${footerMeta}`);
-  console.log(`footerMeta footer = ${footerMeta.footer}`);
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer'; /* footerMeta.footer || '/footer'; */
-  console.log(`footerPath = ${footerPath}`);
-
+  const footerPath = footerMeta.footer || '/footer';
   const fragment = await loadFragment(footerPath);
 
-
-  
   // decorate footer DOM
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
